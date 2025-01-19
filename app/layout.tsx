@@ -1,21 +1,20 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ViewTransitions } from 'next-view-transitions';
-import { Analytics } from '@vercel/analytics/react';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ViewTransitions } from "next-view-transitions";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://leerob.com'),
+  metadataBase: new URL("https://jiksi.xyz"),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   title: {
-    default: 'Lee Robinson',
-    template: '%s | Lee Robinson',
+    default: "Zhicxi Azis Pramana",
+    template: "%s | Zhicxi Azis Pramana",
   },
-  description: 'Frontend developer, optimist, community builder.',
+  description: "Frontend developer, based in Balikpapan, Indonesia",
 };
 
 export default function RootLayout({
@@ -27,12 +26,17 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en" className={`${inter.className}`}>
         <body className="antialiased tracking-tight">
+          <svg className="pointer-events-none absolute cursor-none">
+            <filter id="grainy">
+              <feTurbulence type="turbulence" baseFrequency="0.5" />
+              <feColorMatrix type="saturate" values="0" />
+            </filter>
+          </svg>
           <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 bg-white text-gray-900">
             <main className="max-w-[60ch] mx-auto w-full space-y-6">
               {children}
             </main>
             <Footer />
-            <Analytics />
           </div>
         </body>
       </html>
@@ -42,10 +46,10 @@ export default function RootLayout({
 
 function Footer() {
   const links = [
-    { name: '@leerob', url: 'https://x.com/leeerob' },
-    { name: 'youtube', url: 'https://www.youtube.com/@leerob' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/leeerob' },
-    { name: 'github', url: 'https://github.com/leerob' },
+    { name: "email", url: "mailto:zhicxi.ap@gmail.com" },
+    { name: "instagram", url: "https://www.instagram.com/jiksilalapo" },
+    { name: "linkedin", url: "https://www.linkedin.com/in/zhicxi" },
+    { name: "github", url: "https://github.com/jiksi" },
   ];
 
   return (
@@ -57,7 +61,7 @@ function Footer() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-500 transition-colors duration-200"
+            className="text-gray-400 hover:text-teal-500 transition-colors duration-200"
           >
             {link.name}
           </a>

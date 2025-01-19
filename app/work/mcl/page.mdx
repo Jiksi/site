@@ -1,0 +1,37 @@
+import { AnimatedName } from "../animated-name.tsx";
+import Image from 'next/image';
+import about from './about.png';
+import home from './home.png';
+
+export const metadata = {
+  title: "Meranti Creative Lab",
+  alternates: {
+    canonical: "/work/mcl",
+  },
+};
+
+# Meranti Creative Lab
+
+<AnimatedName />
+
+Meranti Creative Lab is a Design & Brand Consultant based in Balikpapan City. Collaborated with the MCL team to create a simple yet visually stunning website to showcase their works.
+
+<div className="border border-gray-200 rounded-md overflow-hidden">
+  <Image src={about} alt="MCL About Page" />
+</div>
+
+## Main Features
+
+- **Responsive Design**: Ensures seamless user experience across devices, including desktops, tablets, and smartphones.
+
+- **Works Showcase**: Effortlessly displays projects by integrating **WordPress** posts into the website using **GraphQL** for efficient data fetching and management.
+
+<div className="border border-gray-200 rounded-md overflow-hidden">
+  <Image src={home} alt="MCL Home Page" />
+</div>
+
+## Tech Stacks
+
+React, NextJS, Tailwind CSS, Framer Motion, Wordpress, Axios, GraphQL.
+
+## [see website](https://meranticreative.com)

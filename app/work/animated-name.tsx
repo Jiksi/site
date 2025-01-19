@@ -1,9 +1,9 @@
-import { Link } from 'next-view-transitions';
+import { Link } from "next-view-transitions";
 
 export function AnimatedName() {
   return (
     <Link href="/" className="flex mb-8 font-medium text-gray-400 fade-in">
-      Lee Robinson
+      Zhicxi Azis Pramana
     </Link>
   );
 }

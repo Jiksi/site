@@ -1,0 +1,39 @@
+import { AnimatedName } from "../animated-name.tsx";
+import Image from 'next/image';
+import about from './about.png';
+import home from './home.png';
+
+export const metadata = {
+  title: "DLH Siplah Terpadu",
+  alternates: {
+    canonical: "/work/siplah-terpadu",
+  },
+};
+
+# DLH Siplah Terpadu
+
+<AnimatedName />
+
+DLH ([Dinas Lingkungan Hidup](https://www.instagram.com/dlh.ppu/)) Siplah Terpadu is a digitalization initiative and one-stop service platform designed to transform the service processes of the Environmental Department of Penajam Paser Utara Regency. This system aims to enhance efficiency, simplify processes, and accelerate service delivery, ensuring a more seamless and user-friendly experience.
+
+<div className="border border-gray-200 rounded-md overflow-hidden">
+  <Image src={home} alt="Siplah Terpadu Home Page" />
+</div>
+
+## Main Features
+
+- **Online Application and Document Submission**: Enables users to apply for permits or services and upload required documents digitally, reducing the need for physical visits.
+
+- **Real-Time Tracking**: Allows stakeholders to monitor the status of their service requests or applications in real-time, ensuring transparency and accountability.
+
+- **Integrated Reporting System**: Offers a feature for submitting and tracking environmental reports or complaints, ensuring swift response and resolution.
+
+<div className="border border-gray-200 rounded-md overflow-hidden">
+  <Image src={about} alt="Siplah Terpadu About Page" />
+</div>
+
+## Tech Stacks
+
+React, NextJS, Tailwind CSS, shadcn/ui, Prisma ORM, Axios, Leaflet.
+
+## [see website](https://siplahterpadu.id)
