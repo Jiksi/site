@@ -37,7 +37,7 @@ const components = {
     <strong className="font-medium" {...props} />
   ),
   a: ({ href, children, ...props }: AnchorProps) => {
-    const className = "text-teal-500 hover:text-teal-700";
+    const className = "text-teal-800 hover:text-teal-950";
     if (href?.startsWith("/")) {
       return (
         <Link href={href} className={className} {...props}>
