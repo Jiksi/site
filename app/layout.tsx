@@ -49,8 +49,6 @@ function Footer() {
     { name: "email", url: "mailto:zhicxi.ap@gmail.com" },
     { name: "linkedin", url: "https://www.linkedin.com/in/zhicxi" },
     { name: "github", url: "https://github.com/jiksi" },
-    { name: "instagram", url: "https://www.instagram.com/jiksilalapo" },
-    { name: "x/twitter", url: "https://www.x.com/jiksilalapo" },
   ];
 
   return (
