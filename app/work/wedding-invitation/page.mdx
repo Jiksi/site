@@ -1,0 +1,40 @@
+import { AnimatedName } from "../animated-name.tsx";
+import Image from 'next/image';
+import first from './first.png';
+import second from './second.png';
+import third from './third.png';
+
+export const metadata = {
+  title: "Wedding Invitational Website",
+  alternates: {
+    canonical: "/work/wedding-invitation",
+  },
+};
+
+# Wedding Invitational Website
+
+<AnimatedName />
+
+<div className="border border-gray-200 rounded-md overflow-hidden">
+  <Image src={first} alt="Siplah Terpadu Image" />
+</div>
+
+A high-performance digital invitation platform featuring dynamic guest personalization and interactive engagement systems.
+
+<div className="border border-gray-200 rounded-md overflow-hidden">
+  <Image src={second} alt="Siplah Terpadu Image" />
+</div>
+
+## Main Features
+
+- **Dynamic Personalization:** Features an invitation link generator that automates guest personalization via URL parameters `?to=GuestName`, supporting real-time previews and cultural templates.
+- **Interactive Engagement:** Integrates a Guest Wish system with CRUD operations and input validation, connected with the WhatsApp API and Web Share API for seamless distribution.
+- **Modern User Experience:** Utilizes Tailwind CSS 4 for a responsive, mobile-first design that prioritizes accessibility and performance.
+
+<div className="border border-gray-200 rounded-md overflow-hidden">
+  <Image src={third} alt="Siplah Terpadu Image" />
+</div>
+
+## Tech Stacks
+
+Laravel 13, Inertia.js, React 19, Tailwind CSS 4, WhatsApp API, Web Share API.

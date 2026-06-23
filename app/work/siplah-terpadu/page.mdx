@@ -1,7 +1,8 @@
 import { AnimatedName } from "../animated-name.tsx";
 import Image from 'next/image';
-import about from './about.png';
-import home from './home.png';
+import first from './first.png';
+import second from './second.png';
+import third from './third.png';
 
 export const metadata = {
   title: "DLH Siplah Terpadu",
@@ -14,26 +15,26 @@ export const metadata = {
 
 <AnimatedName />
 
-DLH ([Dinas Lingkungan Hidup](https://www.instagram.com/dlh.ppu/)) Siplah Terpadu is a digitalization initiative and one-stop service platform designed to transform the service processes of the Environmental Department of Penajam Paser Utara Regency. This system aims to enhance efficiency, simplify processes, and accelerate service delivery, ensuring a more seamless and user-friendly experience.
+<div className="border border-gray-200 rounded-md overflow-hidden">
+  <Image src={first} alt="Siplah Terpadu Image" />
+</div>
+
+DLH ([Dinas Lingkungan Hidup](https://www.instagram.com/dlh.ppu/)) Siplah Terpadu is a centralized public service and complaint reporting platform developed for the Environment Agency (DLH) of Penajam Paser Utara to streamline reporting workflows, permit applications, and administrative oversight.
 
 <div className="border border-gray-200 rounded-md overflow-hidden">
-  <Image src={home} alt="Siplah Terpadu Home Page" />
+  <Image src={second} alt="Siplah Terpadu Image" />
 </div>
 
 ## Main Features
 
-- **Online Application and Document Submission**: Enables users to apply for permits or services and upload required documents digitally, reducing the need for physical visits.
-
-- **Real-Time Tracking**: Allows stakeholders to monitor the status of their service requests or applications in real-time, ensuring transparency and accountability.
-
-- **Integrated Reporting System**: Offers a feature for submitting and tracking environmental reports or complaints, ensuring swift response and resolution.
+- **Centralized Reporting Platform**: Streamlines the process for public reports and permit applications, modernizing service delivery for the Environmental Department.
+- **Role-Based Access Control (RBAC)**: Multi-level RBAC featuring distinct dashboards for Users, Admins, and Super Admins to enable secure management of reporting workflows and follow-up actions.
+- **Authentication & Document Management**: Integrated NextAuth.js for secure authentication and Firebase Storage for document management, supporting efficient handling of official file attachments.
 
 <div className="border border-gray-200 rounded-md overflow-hidden">
-  <Image src={about} alt="Siplah Terpadu About Page" />
+  <Image src={third} alt="Siplah Terpadu Image" />
 </div>
 
 ## Tech Stacks
 
-React, NextJS, Tailwind CSS, shadcn/ui, Prisma ORM, Axios, Leaflet.
-
-## [see website](https://siplahterpadu.id)
+React, Next.js (App Router), Tailwind CSS, shadcn/ui, NextAuth.js, Firebase Storage, Prisma ORM, Leaflet.

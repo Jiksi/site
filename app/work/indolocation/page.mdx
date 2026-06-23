@@ -1,0 +1,40 @@
+import { AnimatedName } from "../animated-name.tsx";
+import Image from 'next/image';
+import first from './first.png';
+import second from './second.png';
+import third from './third.png';
+
+export const metadata = {
+  title: "Indolocation",
+  alternates: {
+    canonical: "/work/indolocation",
+  },
+};
+
+# Indolocation
+
+<AnimatedName />
+
+<div className="border border-gray-200 rounded-md overflow-hidden">
+  <Image src={first} alt="MCL" />
+</div>
+
+Indolocation is a comprehensive location booking and directory platform featuring a sophisticated search engine, multi-role access management, and professional project documentation utilities.
+
+<div className="border border-gray-200 rounded-md overflow-hidden">
+  <Image src={second} alt="MCL" />
+</div>
+
+## Main Features
+
+- **Location Booking & Directory:** Features a search engine with multi-criteria filtering (location, category, facilities) and dynamic sorting to facilitate seamless location search and booking.
+- **Multi-Role Access Control:** A secure role management system (Admin, Producer, User) utilizing Spatie Laravel Permission and Google Socialite for seamless authentication and content curation.
+- **Documentation & Export Utilities:** A "My-List" collection system and PDF export utility using `html2pdf.js`, enabling users to generate curated reports.
+
+<div className="border border-gray-200 rounded-md overflow-hidden">
+  <Image src={third} alt="MCL" />
+</div>
+
+## Tech Stacks
+
+Laravel 11, Inertia.js, React 18, Spatie Laravel Permission, Google Socialite, html2pdf.js, Tailwind CSS.
