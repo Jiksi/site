@@ -21,18 +21,34 @@ async function getSlugs(dir: string) {
 }
 
 export default async function sitemap() {
-  const workDirectory = path.join(process.cwd(), "app", "work");
-  const slugs = await getSlugs(workDirectory);
+  const projectsDirectory = path.join(process.cwd(), "app", "projects");
+  const projectSlugs = await getSlugs(projectsDirectory).catch(() => []);
 
-  const works = slugs.map((slug) => ({
-    url: `${SITE_URL}/work/${slug}`,
+  const blogsDirectory = path.join(process.cwd(), "app", "blogs");
+  const blogSlugs = await getSlugs(blogsDirectory).catch(() => []);
+
+  const notesDirectory = path.join(process.cwd(), "app", "notes");
+  const noteSlugs = await getSlugs(notesDirectory).catch(() => []);
+
+  const projects = projectSlugs.map((slug) => ({
+    url: `${SITE_URL}/projects/${slug}`,
     lastModified: new Date().toISOString(),
   }));
 
-  const routes = [""].map((route) => ({
+  const blogs = blogSlugs.map((slug) => ({
+    url: `${SITE_URL}/blogs/${slug}`,
+    lastModified: new Date().toISOString(),
+  }));
+
+  const notes = noteSlugs.map((slug) => ({
+    url: `${SITE_URL}/notes/${slug}`,
+    lastModified: new Date().toISOString(),
+  }));
+
+  const routes = ["", "/about"].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date().toISOString(),
   }));
 
-  return [...routes, ...works];
+  return [...routes, ...projects, ...blogs, ...notes];
 }
