@@ -1,6 +1,6 @@
 export function NameTransition() {
   return (
-    <h1 className="font-medium pt-12 transition-element">
+    <h1 className="font-medium transition-element">
       <span className="sr-only">Zhicxi Azis Pramana</span>
       <span aria-hidden="true" className="block overflow-hidden group relative">
         <span className="inline-block transition-all duration-300 ease-in-out group-hover:-translate-y-full whitespace-nowrap">

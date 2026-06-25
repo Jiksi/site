@@ -2,7 +2,10 @@ import { Link } from "next-view-transitions";
 
 export function AnimatedName() {
   return (
-    <Link href="/" className="flex mb-4 font-medium text-gray-400 fade-in">
+    <Link
+      href="/"
+      className="flex font-medium text-gray-400 fade-in transition-element"
+    >
       Zhicxi Azis Pramana
     </Link>
   );

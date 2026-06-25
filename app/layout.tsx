@@ -32,8 +32,8 @@ export default function RootLayout({
               <feColorMatrix type="saturate" values="0" />
             </filter>
           </svg>
-          <div className="min-h-svh flex flex-col justify-between pt-0 md:pt-8 p-8 bg-white text-gray-900">
-            <main className="max-w-[60ch] mx-auto w-full space-y-6">
+          <div className="min-h-svh flex flex-col justify-between p-[0_2rem_2rem_2rem] bg-white text-gray-900">
+            <main className="max-w-[60ch] mx-auto w-full space-y-6 pt-12">
               {children}
             </main>
             <Footer />
