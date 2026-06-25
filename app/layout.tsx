@@ -17,6 +17,19 @@ export const metadata: Metadata = {
     template: "%s | Zhicxi Azis Pramana",
   },
   description: "My portfolio, blog, and personal website.",
+  openGraph: {
+    title: "Zhicxi Azis Pramana",
+    description: "My portfolio, blog, and personal website.",
+    url: "https://jiksi.xyz",
+    siteName: "Zhicxi Azis Pramana",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zhicxi Azis Pramana",
+    description: "My portfolio, blog, and personal website.",
+  },
 };
 
 export default function RootLayout({
