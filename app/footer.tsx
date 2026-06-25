@@ -1,0 +1,25 @@
+export default function Footer() {
+  const links = [
+    { name: "email", url: "mailto:zhicxi.ap@gmail.com" },
+    { name: "linkedin", url: "https://www.linkedin.com/in/zhicxi" },
+    { name: "github", url: "https://github.com/jiksi" },
+  ];
+
+  return (
+    <footer className="mt-12 text-center">
+      <div className="flex justify-center space-x-4 tracking-tight">
+        {links.map((link) => (
+          <a
+            key={link.name}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-teal-800 transition-colors duration-300"
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+    </footer>
+  );
+}
