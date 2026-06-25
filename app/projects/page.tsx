@@ -2,6 +2,7 @@ import { Link } from "next-view-transitions";
 import { NameTransition } from "@/components/name";
 import { getProjects } from "./get-projects";
 import { formatYear } from "@/lib/utils";
+import { Small } from "@/components/small";
 
 export const metadata = {
   title: "Projects",
@@ -30,10 +31,10 @@ export default async function ProjectsPage() {
                 {project.title}
               </Link>
             </strong>
-            <small className="flex text-sm text-gray-500 mb-3">
+            <Small>
               {formatYear(project.publishDate)}
               {project.tags.length > 0 && ` // ${project.tags.join(", ")}`}
-            </small>
+            </Small>
           </li>
         ))}
       </ul>

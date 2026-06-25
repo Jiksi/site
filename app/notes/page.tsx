@@ -2,6 +2,7 @@ import { Link } from "next-view-transitions";
 import { NameTransition } from "@/components/name";
 import { getNotes } from "./get-notes";
 import { formatDate } from "@/lib/utils";
+import { Small } from "@/components/small";
 
 export const metadata = {
   title: "Notes",
@@ -31,10 +32,10 @@ export default async function NotesPage() {
                 {note.title}
               </Link>
             </strong>
-            <small className="flex text-sm text-gray-500 mb-3">
+            <Small>
               {formatDate(note.publishDate)}
               {note.tags.length > 0 && ` // ${note.tags.join(", ")}`}
-            </small>
+            </Small>
           </li>
         ))}
       </ul>

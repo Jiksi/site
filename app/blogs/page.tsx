@@ -2,6 +2,7 @@ import { Link } from "next-view-transitions";
 import { NameTransition } from "@/components/name";
 import { getBlogPosts } from "./get-posts";
 import { formatDate } from "@/lib/utils";
+import { Small } from "@/components/small";
 
 export const metadata = {
   title: "Blogs",
@@ -30,10 +31,10 @@ export default async function BlogsPage() {
                 {post.title}
               </Link>
             </strong>
-            <small className="flex text-sm text-gray-500 mb-3">
+            <Small>
               {formatDate(post.publishDate)}
               {post.tags.length > 0 && ` // ${post.tags.join(", ")}`}
-            </small>
+            </Small>
           </li>
         ))}
       </ul>
