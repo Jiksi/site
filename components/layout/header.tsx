@@ -27,9 +27,9 @@ export default function Header() {
             <Link
               key={link.name}
               href={link.url}
-              className={`transition-colors duration-300 ${
-                isActive ? "text-teal-800" : "text-gray-400"
-              } group-hover:text-gray-400 hover:text-teal-800!`}
+              className={`nav-link transition-colors duration-300 ${
+                isActive ? "text-teal-800!" : "text-gray-400!"
+              } group-hover:text-gray-400! hover:text-teal-800!`}
             >
               {link.name}
             </Link>
