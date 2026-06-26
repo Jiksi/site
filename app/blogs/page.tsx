@@ -18,17 +18,23 @@ export default async function BlogsPage() {
     <>
       <NameTransition />
       <p>Putting my thoughts into long-form articles.</p>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
-            <small>
-              {formatDate(post.publishDate)}
-              {post.tags.length > 0 && ` // ${post.tags.join(", ")}`}
-            </small>
-          </li>
-        ))}
-      </ul>
+      {posts.length > 0 ? (
+        <ul>
+          {posts.map((post) => (
+            <li key={post.slug}>
+              <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
+              <small>
+                {formatDate(post.publishDate)}
+                {post.tags.length > 0 && ` // ${post.tags.join(", ")}`}
+              </small>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="rounded-xl border border-gray-100 bg-gray-50/50 p-8 text-center my-4">
+          <p className="text-sm text-gray-500">No content available yet.</p>
+        </div>
+      )}
     </>
   );
 }

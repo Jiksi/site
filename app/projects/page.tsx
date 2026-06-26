@@ -18,17 +18,23 @@ export default async function ProjectsPage() {
     <>
       <NameTransition />
       <p>A showcase of projects I've built</p>
-      <ul>
-        {projects.map((project) => (
-          <li key={project.slug}>
-            <Link href={`/projects/${project.slug}`}>{project.title}</Link>
-            <small>
-              {formatYear(project.publishDate)}
-              {project.tags.length > 0 && ` // ${project.tags.join(", ")}`}
-            </small>
-          </li>
-        ))}
-      </ul>
+      {projects.length > 0 ? (
+        <ul>
+          {projects.map((project) => (
+            <li key={project.slug}>
+              <Link href={`/projects/${project.slug}`}>{project.title}</Link>
+              <small>
+                {formatYear(project.publishDate)}
+                {project.tags.length > 0 && ` // ${project.tags.join(", ")}`}
+              </small>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="rounded-xl border border-gray-100 bg-gray-50/50 p-8 text-center my-4">
+          <p className="text-sm text-gray-500">No content available yet.</p>
+        </div>
+      )}
     </>
   );
 }

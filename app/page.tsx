@@ -22,7 +22,7 @@ export default async function HomePage() {
 
       <p>
         I'm a software engineer with {yearsOfExperience} years of experience,
-        based in{" "}
+        based in&nbsp;
         <a
           href="https://maps.app.goo.gl/jT3pXEEWBJ3W9VyCA"
           target="_blank"
@@ -33,30 +33,32 @@ export default async function HomePage() {
         . From frontend to backend to DevOps. Basically, I do everything.
       </p>
 
-      <div>
-        <h2>Projects</h2>
-        <ul>
-          {projects.slice(0, 5).map((project) => (
-            <li key={project.slug}>
-              <Link href={`/projects/${project.slug}`}>{project.title}</Link>
-              <small>
-                {formatYear(project.publishDate)}
-                {project.tags.length > 0 && ` // ${project.tags.join(", ")}`}
-              </small>
-            </li>
-          ))}
-        </ul>
-        {projects.length > 5 && (
-          <p className="mt-2 pl-6">
-            <Link
-              href="/projects"
-              className="text-gray-400 transition-colors duration-300 hover:text-teal-800 underline"
-            >
-              see more projects
-            </Link>
-          </p>
-        )}
-      </div>
+      {projects.length > 0 && (
+        <div>
+          <h2>Projects</h2>
+          <ul>
+            {projects.slice(0, 5).map((project) => (
+              <li key={project.slug}>
+                <Link href={`/projects/${project.slug}`}>{project.title}</Link>
+                <small>
+                  {formatYear(project.publishDate)}
+                  {project.tags.length > 0 && ` // ${project.tags.join(", ")}`}
+                </small>
+              </li>
+            ))}
+          </ul>
+          {projects.length > 5 && (
+            <p className="mt-2 pl-6">
+              <Link
+                href="/projects"
+                className="text-gray-400! transition-colors duration-300 hover:text-teal-800! underline"
+              >
+                see more projects
+              </Link>
+            </p>
+          )}
+        </div>
+      )}
 
       <div>
         <h2>Skills</h2>
@@ -98,30 +100,32 @@ export default async function HomePage() {
         </ul>
       </div>
 
-      <div>
-        <h2>Blogs</h2>
-        <ul>
-          {blogs.slice(0, 5).map((post) => (
-            <li key={post.slug}>
-              <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
-              <small>
-                {formatDate(post.publishDate)}
-                {post.tags.length > 0 && ` // ${post.tags.join(", ")}`}
-              </small>
-            </li>
-          ))}
-        </ul>
-        {blogs.length > 5 && (
-          <p className="mt-2 pl-6">
-            <Link
-              href="/blogs"
-              className="text-gray-400 transition-colors duration-300 hover:text-teal-800 underline"
-            >
-              see more blogs
-            </Link>
-          </p>
-        )}
-      </div>
+      {blogs.length > 0 && (
+        <div>
+          <h2>Blogs</h2>
+          <ul>
+            {blogs.slice(0, 5).map((post) => (
+              <li key={post.slug}>
+                <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
+                <small>
+                  {formatDate(post.publishDate)}
+                  {post.tags.length > 0 && ` // ${post.tags.join(", ")}`}
+                </small>
+              </li>
+            ))}
+          </ul>
+          {blogs.length > 5 && (
+            <p className="mt-2 pl-6">
+              <Link
+                href="/blogs"
+                className="text-gray-400! transition-colors duration-300 hover:text-teal-800! underline"
+              >
+                see more blogs
+              </Link>
+            </p>
+          )}
+        </div>
+      )}
     </>
   );
 }
