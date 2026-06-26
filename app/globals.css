@@ -50,6 +50,63 @@ h4 {
   text-wrap: balance;
 }
 
+h1 {
+  @apply font-medium;
+}
+
+h2 {
+  @apply text-gray-800 font-medium mt-6 mb-3 text-lg;
+}
+
+h3 {
+  @apply text-gray-800 font-medium mt-6 mb-3;
+}
+
+h4 {
+  @apply font-medium;
+}
+
+p {
+  @apply text-gray-800 leading-snug;
+}
+
+ol {
+  @apply text-gray-800 list-decimal pl-5 space-y-2;
+}
+
+ul {
+  @apply text-gray-800 list-disc pl-5 space-y-1;
+}
+
+li {
+  @apply pl-1;
+}
+
+em {
+  @apply font-medium;
+}
+
+strong {
+  @apply font-medium;
+}
+
+a {
+  @apply text-teal-800 hover:text-teal-950;
+}
+
+img {
+  @apply border border-gray-200 overflow-hidden w-full h-auto;
+}
+
+blockquote {
+  @apply border-l-3 border-gray-300 pl-4 text-gray-700;
+  margin-left: 0.075em;
+}
+
+small {
+  @apply flex text-sm text-gray-500;
+}
+
 pre {
   background-color: #16161e;
   border-radius: 0.5rem;

@@ -10,60 +10,40 @@ type AnchorProps = ComponentPropsWithoutRef<"a">;
 type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 
 const components = {
-  h1: (props: HeadingProps) => (
-    <h1 className="font-medium mb-0 fade-in" {...props} />
-  ),
-  h2: (props: HeadingProps) => (
-    <h2 className="text-gray-800 font-medium mt-6 mb-3" {...props} />
-  ),
-  h3: (props: HeadingProps) => (
-    <h3 className="text-gray-800 font-medium mt-6 mb-3" {...props} />
-  ),
-  h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
-  p: (props: ParagraphProps) => (
-    <p className="text-gray-800 leading-snug" {...props} />
-  ),
-  ol: (props: ListProps) => (
-    <ol className="text-gray-800 list-decimal pl-5 space-y-2" {...props} />
-  ),
-  ul: (props: ListProps) => (
-    <ul className="text-gray-800 list-disc pl-5 space-y-1" {...props} />
-  ),
-  li: (props: ListItemProps) => <li className="pl-1" {...props} />,
-  em: (props: ComponentPropsWithoutRef<"em">) => (
-    <em className="font-medium" {...props} />
-  ),
-  strong: (props: ComponentPropsWithoutRef<"strong">) => (
-    <strong className="font-medium" {...props} />
-  ),
+  h1: (props: HeadingProps) => <h1 className="mb-0 fade-in" {...props} />,
+  h2: (props: HeadingProps) => <h2 {...props} />,
+  h3: (props: HeadingProps) => <h3 {...props} />,
+  h4: (props: HeadingProps) => <h4 {...props} />,
+  p: (props: ParagraphProps) => <p {...props} />,
+  ol: (props: ListProps) => <ol {...props} />,
+  ul: (props: ListProps) => <ul {...props} />,
+  li: (props: ListItemProps) => <li {...props} />,
+  em: (props: ComponentPropsWithoutRef<"em">) => <em {...props} />,
+  strong: (props: ComponentPropsWithoutRef<"strong">) => <strong {...props} />,
   a: ({ href, children, ...props }: AnchorProps) => {
-    const className = "text-teal-800 hover:text-teal-950";
     if (href?.startsWith("/")) {
       return (
-        <Link href={href} className={className} {...props}>
+        <Link href={href} {...props}>
           {children}
         </Link>
       );
     }
     if (href?.startsWith("#")) {
       return (
-        <a href={href} className={className} {...props}>
+        <a href={href} {...props}>
           {children}
         </a>
       );
     }
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={className}
-        {...props}
-      >
+      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
         {children}
       </a>
     );
   },
+  img: (props: ComponentPropsWithoutRef<"img">) => (
+    <img sizes="100vw" loading="lazy" {...props} />
+  ),
   code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => {
     const codeHTML = highlight(children as string);
     return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
@@ -88,12 +68,7 @@ const components = {
       </tbody>
     </table>
   ),
-  blockquote: (props: BlockquoteProps) => (
-    <blockquote
-      className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-gray-700"
-      {...props}
-    />
-  ),
+  blockquote: (props: BlockquoteProps) => <blockquote {...props} />,
 };
 
 declare global {
