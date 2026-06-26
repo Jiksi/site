@@ -5,7 +5,7 @@ import { ContentItem } from "@/types";
 export async function getContentItems<T extends ContentItem>(
   dirName: string
 ): Promise<T[]> {
-  const dirPath = path.join(process.cwd(), "app", dirName);
+  const dirPath = path.join(process.cwd(), "contents", dirName);
 
   const entries = await fs
     .readdir(dirPath, {

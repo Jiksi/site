@@ -1,8 +1,8 @@
 import { Link } from "next-view-transitions";
 import { NameTransition } from "@/components/name";
-import { getBlogPosts } from "./get-posts";
 import { formatDate } from "@/lib/utils";
-import { Small } from "@/components/small";
+import { getContentItems } from "@/lib/content";
+import { BlogPost } from "@/types";
 
 export const metadata = {
   title: "Blogs",
@@ -12,29 +12,20 @@ export const metadata = {
 };
 
 export default async function BlogsPage() {
-  const posts = await getBlogPosts();
+  const posts = await getContentItems<BlogPost>("blogs");
 
   return (
     <>
       <NameTransition />
-      <p className="text-gray-800 leading-snug">
-        Putting my thoughts into long-form articles.
-      </p>
-      <ul className="text-gray-800 list-disc pl-5 space-y-1">
+      <p>Putting my thoughts into long-form articles.</p>
+      <ul>
         {posts.map((post) => (
-          <li key={post.slug} className="pl-1">
-            <strong className="font-medium">
-              <Link
-                href={`/blogs/${post.slug}`}
-                className="text-teal-800 hover:text-teal-950"
-              >
-                {post.title}
-              </Link>
-            </strong>
-            <Small>
+          <li key={post.slug}>
+            <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
+            <small>
               {formatDate(post.publishDate)}
               {post.tags.length > 0 && ` // ${post.tags.join(", ")}`}
-            </Small>
+            </small>
           </li>
         ))}
       </ul>

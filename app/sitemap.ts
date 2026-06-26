@@ -21,13 +21,13 @@ async function getSlugs(dir: string) {
 }
 
 export default async function sitemap() {
-  const projectsDirectory = path.join(process.cwd(), "app", "projects");
+  const projectsDirectory = path.join(process.cwd(), "contents", "projects");
   const projectSlugs = await getSlugs(projectsDirectory).catch(() => []);
 
-  const blogsDirectory = path.join(process.cwd(), "app", "blogs");
+  const blogsDirectory = path.join(process.cwd(), "contents", "blogs");
   const blogSlugs = await getSlugs(blogsDirectory).catch(() => []);
 
-  const notesDirectory = path.join(process.cwd(), "app", "notes");
+  const notesDirectory = path.join(process.cwd(), "contents", "notes");
   const noteSlugs = await getSlugs(notesDirectory).catch(() => []);
 
   const projects = projectSlugs.map((slug) => ({

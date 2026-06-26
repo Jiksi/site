@@ -4,7 +4,7 @@ export function AnimatedName() {
   return (
     <Link
       href="/"
-      className="flex font-medium w-fit text-gray-400 fade-in transition-element"
+      className="flex font-medium w-fit text-gray-400! fade-in transition-element"
     >
       Zhicxi Azis Pramana
     </Link>

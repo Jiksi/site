@@ -1,8 +1,8 @@
 import { Link } from "next-view-transitions";
 import { NameTransition } from "@/components/name";
-import { getProjects } from "./get-projects";
 import { formatYear } from "@/lib/utils";
-import { Small } from "@/components/small";
+import { getContentItems } from "@/lib/content";
+import { Project } from "@/types";
 
 export const metadata = {
   title: "Projects",
@@ -12,29 +12,20 @@ export const metadata = {
 };
 
 export default async function ProjectsPage() {
-  const projects = await getProjects();
+  const projects = await getContentItems<Project>("projects");
 
   return (
     <>
       <NameTransition />
-      <p className="text-gray-800 leading-snug">
-        A showcase of projects I've built
-      </p>
-      <ul className="text-gray-800 list-disc pl-5 space-y-1">
+      <p>A showcase of projects I've built</p>
+      <ul>
         {projects.map((project) => (
-          <li key={project.slug} className="pl-1">
-            <strong className="font-medium">
-              <Link
-                href={`/projects/${project.slug}`}
-                className="text-teal-800 hover:text-teal-950"
-              >
-                {project.title}
-              </Link>
-            </strong>
-            <Small>
+          <li key={project.slug}>
+            <Link href={`/projects/${project.slug}`}>{project.title}</Link>
+            <small>
               {formatYear(project.publishDate)}
               {project.tags.length > 0 && ` // ${project.tags.join(", ")}`}
-            </Small>
+            </small>
           </li>
         ))}
       </ul>
